@@ -1,0 +1,24 @@
+{
+  "name": "html-parcel-classless",
+  "version": "1.0.0",
+  "style": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "parcel example/index.html",
+    "build": "NODE_ENV=production postcss ./src/index.css -o bundle/index.min.css"
+  },
+  "devDependencies": {
+    "@charcoal-ui/tailwind-config": "1.0.0",
+    "autoprefixer": "^10.2.5",
+    "cssnano": "^5.0.4",
+    "parcel": "^2.0.0",
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.2",
+    "postcss-modules": "^4.0.0",
+    "postcss-nested": "^5.0.5",
+    "prettier": "^2.3.0",
+    "tailwindcss": "^3.0.0"
+  }
+}

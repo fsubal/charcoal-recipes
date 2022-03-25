@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/index.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>
+          <a href="/"> pixiv </a>
+        </h1>
+      </div>
+      <small>
+        Logged in as:
+        <pre>example@pixiv.co.jp</pre>
+      </small>
+      <button>ログアウト</button>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#" aria-current>トップ1</a></li>
+        <li><a href="#">トップ1</a></li>
+        <li><a href="#">トップ1</a></li>
+        <li><a href="#">トップ1</a></li>
+      </ul>
+    </nav>
+
+    <form method="post" action="/admin/hoge.php">
+      <h1>
+        <small>キャプション</small>
+        そして見出し
+      </h1>
+
+      <section>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ut vitae
+          expedita ad itaque, rem, perspiciatis natus saepe id eligendi sequi
+          neque quaerat mollitia velit odio exercitationem adipisci voluptatibus
+          architecto.
+        </p>
+
+        <p>
+          <img src="https://via.placeholder.com/350" alt="" />
+        </p>
+
+        <h2>sub header</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet
+          <a href="http://pixiv.net"> consectetur adipisicing elit. </a>
+          Sapiente maiores laboriosam sequi inventore non corrupti rem quis esse
+          officiis ipsam accusantium architecto molestiae voluptatum dolore
+          nostrum, totam soluta? Unde, explicabo?
+        </p>
+      </section>
+
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>タイトル</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><img src="https://via.placeholder.com/200" alt="" /></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><img src="https://via.placeholder.com/200" alt="" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <h1>
+        <span>ちょっと広めに表示するよ</span>
+        検索結果
+      </h1>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>タイトル</th>
+            <th>作者</th>
+            <th width="128">作成日</th>
+            <th width="128">最終更新日</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>hello</td>
+            <td>john</td>
+            <td>2021-05-25</td>
+            <td>2021-05-25</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>buenas noches</td>
+            <td>hanako</td>
+            <td>2021-05-25</td>
+            <td>2021-05-25</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>もっとだもっと</h2>
+      <section>
+        <label for="input-1"> なんか入れて </label>
+        <input
+          id="input-1"
+          type="datetime-local"
+          placeholder="Several people are typing..."
+        />
+
+        <hr />
+
+        <label for="">
+          これはエラー
+          <input type="number" placeholder="Several people are typing..." />
+        </label>
+
+        <hr />
+
+        <label for=""
+          >文章を入れよう<textarea name="" id="" placeholder="aaa"></textarea>
+        </label>
+
+        <hr />
+
+        <label for="">
+          選択だぞ
+          <select name="" aria-invalid="">
+            <option value="">a</option>
+            <option value="">b</option>
+            <option value="">c</option>
+            <option value="">d</option>
+          </select>
+        </label>
+
+        <hr />
+
+        <label for="">
+          ファイル
+          <br />
+          <input type="file" name="" aria-invalid="" />
+        </label>
+
+        <hr />
+
+        <label for=""> いい感じのラジオ </label>
+
+        <label for="a1">
+          <input type="radio" name="a" value="a1" id="a1" aria-invalid="" />
+          選んで
+        </label>
+
+        <label for="a2">
+          <input type="radio" name="a" value="a2" id="a2" aria-invalid="" />
+          選べ
+        </label>
+
+        <hr />
+
+        <label for=""> いい感じのチェックボックス </label>
+
+        <input type="checkbox" name="a" value="a1" id="c1" />
+        <label for="c1"> 選んで </label>
+
+        <label for="c2">
+          <input type="checkbox" name="a" value="a2" id="c2" />
+          選べ
+        </label>
+
+        <hr />
+
+        <footer>
+          <p>
+            <small> ※ 保存したければここ → </small>
+          </p>
+          <button disabled>Disabled</button>
+          <a href="#" role="button">編集</a>
+          <button type="submit">保存</button>
+        </footer>
+      </section>
+    </form>
+  </body>
+</html>

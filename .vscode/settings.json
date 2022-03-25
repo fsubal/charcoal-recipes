@@ -1,0 +1,6 @@
+{
+  "stylelint.enable": false,
+  "css.validate": false,
+  "editor.formatOnSave": true,
+  "prettier.enable": true
+}

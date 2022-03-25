@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-size: 16px;
+    @apply bg-background2 text-text1;
+  }
+
+  header {
+    @apply mx-auto w-full max-w-screen-screen4;
+    @apply flex gap-[8px] justify-between items-center flex-shrink-0 py-24;
+
+    :first-child {
+      @apply m-0 max-w-none flex-1;
+    }
+  }
+
+  section,
+  article {
+    @apply mx-auto w-full max-w-screen-screen4;
+    @apply bg-background1 rounded-8 w-full p-24;
+
+    & + & {
+      @apply mt-40;
+    }
+
+    footer {
+      @apply flex flex-shrink-0 flex-wrap justify-end items-center gap-[8px];
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply mx-auto w-full max-w-screen-screen4;
+    @apply px-4 screen4:px-0 text-text1 font-bold;
+
+    a {
+      @apply text-text1;
+    }
+
+    section &,
+    article & {
+      @apply px-0;
+    }
+  }
+
+  h1 {
+    @apply typography-20 mt-[36px] mb-[12px];
+  }
+
+  h2 {
+    @apply typography-16 mt-[36px] mb-[12px];
+  }
+
+  h1,
+  h2 {
+    span,
+    small {
+      @apply text-text3 typography-14 font-normal block;
+    }
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply typography-14 my-[4px];
+  }
+
+  a {
+    @apply text-brand hover:text-brand-hover active:text-brand-press;
+    @apply focus:outline-none focus:ring-4 focus:ring-brand-outline focus:rounded-4;
+  }
+
+  small {
+    @apply typography-14;
+  }
+
+  hr {
+    @apply border-t border-solid border-default my-16;
+  }
+}
+
+@layer components {
+  nav {
+    @apply mx-auto w-full max-w-screen-screen4 my-16;
+
+    ul {
+      @apply inline-flex gap-x-fixed flex-shrink-0 flex-wrap;
+
+      &[aria-orientation="vertical"] {
+        @apply flex-col gap-y-[16px];
+      }
+    }
+
+    a {
+      @apply block typography-14 text-text2 font-bold py-8 px-24 preserve-half-leading;
+      @apply rounded-oval focus:rounded-oval;
+
+      &[aria-current],
+      &:hover {
+        @apply bg-surface3 text-text2;
+      }
+    }
+  }
+}
+
+@layer components {
+  :disabled {
+    @apply opacity-32 cursor-not-allowed;
+  }
+
+  [aria-invalid] {
+    @apply ring-4 ring-assertive-outline;
+  }
+
+  :placeholder {
+    @apply typography-14 text-text3;
+  }
+}
+
+@layer components {
+  button {
+    @apply typography-14 preserve-half-leading;
+    @apply px-24 py-[9px] rounded-oval font-bold;
+    @apply focus:outline-none focus:ring-4 focus:ring-brand-outline;
+
+    @apply text-text2 hover:text-text2-hover active:text-text2-press;
+    @apply bg-surface3 hover:bg-surface3-hover active:bg-surface3-press;
+
+    &[type="submit"] {
+      @apply text-text5 hover:text-text5-hover active:text-text5-press;
+      @apply bg-brand hover:bg-brand-hover active:bg-brand-press;
+    }
+  }
+
+  a[role="button"] {
+    @apply typography-14 preserve-half-leading;
+    @apply px-24 py-[9px] rounded-oval font-bold;
+    @apply focus:outline-none focus:ring-4 focus:ring-brand-outline;
+
+    @apply text-text5 hover:text-text5-hover active:text-text5-press;
+    @apply bg-surface6 hover:bg-surface6-hover active:bg-surface6-press;
+  }
+}
+
+@layer components {
+  input[type="file"] {
+    @apply w-full typography-14 preserve-half-leading;
+    @apply px-24 py-[9px] rounded-oval font-bold max-w-full;
+    @apply focus:outline-none focus:ring-4 focus:ring-brand-outline;
+
+    @apply text-text2 hover:text-text2-hover active:text-text2-press;
+    @apply bg-surface3 hover:bg-surface3-hover active:bg-surface3-press;
+  }
+}
+
+@layer components {
+  label {
+    @apply block font-bold typography-14 text-text1 preserve-half-leading;
+
+    & + & {
+      @apply my-8;
+    }
+
+    /** Heuristic assumption: when <label> is next to a radio/checkbox, it should be the label for it */
+    input[type="radio"] + &,
+    input[type="checkbox"] + & {
+      @apply font-normal inline-block;
+    }
+  }
+}
+
+@layer components {
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="search"],
+  textarea {
+    @apply block w-full bg-surface3 text-text2 p-8 rounded-4;
+    @apply focus:outline-none focus:ring-4 focus:ring-brand-outline;
+  }
+
+  textarea {
+    @apply resize-y;
+  }
+}
+
+@layer components {
+  input[type="radio"] {
+    @apply inline-block align-middle appearance-none cursor-pointer rounded-oval w-[20px] h-[20px] p-[6px];
+    @apply bg-background1 border border-default border-solid;
+    @apply focus:outline-none focus:ring-4 focus:ring-brand-outline;
+
+    &:checked {
+      @apply bg-brand border-none;
+
+      &::after {
+        content: "";
+        @apply block bg-text5 w-[8px] h-[8px] rounded-oval;
+      }
+    }
+  }
+}
+
+@layer components {
+  input[type="checkbox"] {
+    @apply inline-block align-middle appearance-none cursor-pointer rounded-4 w-[20px] h-[20px];
+    @apply bg-background1 border border-default border-solid;
+    @apply focus:outline-none focus:ring-4 focus:ring-brand-outline;
+
+    &:checked {
+      @apply bg-brand border-none text-text5;
+
+      &::after {
+        content: url("data:image/svg+xml;utf-8,<svg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7.56534 0.965675C8.09055 0.449523 8.93474 0.456864 9.45089 0.982071C9.96704 1.50728 9.9597 2.35147 9.43449 2.86762L3.65842 8.5441L0.723776 5.60946C0.203077 5.08876 0.203077 4.24454 0.723776 3.72384C1.24448 3.20314 2.0887 3.20314 2.60939 3.72384L3.67475 4.78919L7.56534 0.965675Z' fill='white'/></svg>");
+        line-height: 20px;
+        @apply block text-center;
+      }
+    }
+  }
+}
+
+@layer components {
+  select:not([multiple]) {
+    @apply block w-full bg-surface3 hover:bg-surface3-hover text-text2;
+    @apply focus:outline-none focus:ring-4 focus:ring-brand-outline;
+    @apply appearance-none relative p-8 pr-[32px] rounded-4;
+
+    background-image: url('data:image/svg+xml;utf-8,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 4.08579L1.95711 1.04289C1.56658 0.652369 0.933418 0.652369 0.542893 1.04289C0.152369 1.43342 0.152369 2.06658 0.542893 2.45711L5 6.91421L9.45711 2.45711C9.84763 2.06658 9.84763 1.43342 9.45711 1.04289C9.06658 0.652369 8.43342 0.652369 8.04289 1.04289L5 4.08579Z" fill="black" fill-opacity="0.64"/></svg>');
+    background-position: center right 16px;
+    background-repeat: no-repeat;
+  }
+}
+
+@layer components {
+  table {
+    @apply w-full;
+
+    th {
+      @apply typography-14 font-bold text-text3 text-left h-40 px-16;
+      @apply border-b border-default border-solid;
+    }
+
+    td {
+      @apply typography-14 text-left text-text2 py-16  px-16;
+    }
+  }
+}
