@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import styled, { DefaultTheme } from "styled-components";
+import styled from "styled-components";
 import logo from "./logo.svg";
 
-import "@charcoal-ui/icons";
-import type { Props as CharcoalIconProps } from "@charcoal-ui/icons";
 import { Button } from "@charcoal-ui/react";
-import createTheme from "@charcoal-ui/styled";
-
-const theme = createTheme<DefaultTheme>();
+import { theme } from "./styled";
+import { Icon } from "./components/Icon";
 
 const Logo = styled.img`
   pointer-events: none;
@@ -44,26 +41,6 @@ const ButtonInner = styled.div`
   display: flex;
   align-items: center;
 `;
-
-interface IconProps
-  extends Omit<CharcoalIconProps, "class" | "unsafe-non-guideline-scale"> {
-  className?: string;
-  __unsafe_NON_GUIDELINE_SCALE?: CharcoalIconProps["unsafe-non-guideline-scale"];
-}
-
-const Icon: React.VFC<IconProps> = ({
-  className,
-  __unsafe_NON_GUIDELINE_SCALE,
-  ...rest
-}) => {
-  return (
-    <pixiv-icon
-      class={className}
-      unsafe-non-guideline-scale={__unsafe_NON_GUIDELINE_SCALE}
-      {...rest}
-    />
-  );
-};
 
 const App: React.VFC = () => {
   const [count, setCount] = useState(0);
