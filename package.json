@@ -1,6 +1,9 @@
 {
   "name": "charcoal-recipes",
-  "packageManager": "yarn@3.2.0",
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
   "workspaces": [
     "examples/*"
   ]
