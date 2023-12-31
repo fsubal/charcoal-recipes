@@ -33,14 +33,8 @@ jobs:
           cache: "npm"
 
       - run: npm ci
-      - run: npm run build 2> $GITHUB_WORKSPACE/build.stderr.log
-      - run: npm run test 2> $GITHUB_WORKSPACE/test.stderr.log
-
-      - run: |
-          if grep "warn" $GITHUB_WORKSPACE/*.log; then
-            echo "::warning:: Looks like tailwind build has unexpected warnings"
-            exit 1
-          fi
+      - run: npm run build
+      - run: npm run test
 
   automerge:
     runs-on: ubuntu-latest

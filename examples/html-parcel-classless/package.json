@@ -12,7 +12,7 @@
     "@charcoal-ui/tailwind-config": "1.0.0",
     "autoprefixer": "^10.2.5",
     "cssnano": "^5.0.4",
-    "parcel": "^2.0.0",
+    "parcel": "^2.10.3",
     "postcss": "^8.4.31",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.2",
